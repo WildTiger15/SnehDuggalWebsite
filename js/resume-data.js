@@ -31,6 +31,8 @@ const RESUME = {
   },
   // Local file in /assets — swap in a new export any time and keep this path.
   resumeFile: "assets/Sneh_Duggal_Resume.pdf",
+  // Headshot for the About section — swap in a new photo any time and keep this path.
+  photo: "assets/profile.jpg",
 
   // ---- About -------------------------------------------------------------
   // Longer bio for the About section — keep this distinct from `tagline` above.
@@ -45,6 +47,14 @@ const RESUME = {
   and internships where I can keep working on retrieval, vector search, and
   applied CV/NLP systems at scale. Long term I'm aiming at industry and startup
   roles building ML systems, agentic AI, and physical AI/robotics.`,
+
+  // ---- Hobbies -----------------------------------------------------------
+  // Shown as a small row of tags in the About section.
+  hobbies: [
+    { label: "Badminton", icon: "🏸" },
+    { label: "Brazilian Jiu-Jitsu", icon: "🥋" },
+    { label: "Piano — performed in local talent shows through high school and college", icon: "🎹" },
+  ],
 
   // ---- Education -----------------------------------------------------------
   education: [
@@ -119,20 +129,20 @@ const RESUME = {
       title: "UVic AI Course Assistant",
       subtitle: "Tool-calling course-planning assistant",
       description:
-        "A course-planning assistant that answers real student prerequisite, eligibility, and requirement questions by orchestrating Claude over 6 deterministic tools querying a PostgreSQL schema of UVic's course and program data (5,300+ courses, 560+ programs). Cut multi-step response latency ~4x by parallelizing tool calls and adding prompt caching.",
+        "A course-planning assistant that answers real student prerequisite, eligibility, and requirement questions by orchestrating Claude over 6 deterministic tools querying a PostgreSQL schema of UVic's course and program data (5,300+ courses, 560+ programs). Cut multi-step response latency ~4x by parallelizing tool calls and adding prompt caching. Hardened through adversarial testing — fixed a token-budget bug causing silent empty responses and enforced scope boundaries against prompt-injection and jailbreak attempts.",
       tags: ["TypeScript", "Next.js", "PostgreSQL", "Claude API", "Claude Code"],
       link: null,
       linkLabel: "Link coming soon",
       status: "In Progress",
     },
     {
-      title: "TracyAI",
-      subtitle: "AI interview coach",
+      title: "AI Interview Coach",
+      subtitle: "Full-stack mock-interview coach with live voice",
       description:
-        "An AI interview coach that grounds responses across the top 50 common interview questions using a Chroma-backed retrieval store, with real-time voice interaction (speech recognition + synthesis) and personalized feedback via prompt engineering.",
-      tags: ["Python", "LlamaIndex", "Llama", "Chroma", "RAG"],
-      link: null,
-      linkLabel: "Link coming soon",
+        "A full-stack AI mock-interview coach with a FastAPI + LangChain RAG backend and an animated React/TypeScript frontend, grounding STAR-method feedback in a Chroma-embedded interview-coaching knowledge base. Real-time voice interaction pairs browser speech recognition for spoken answers with OpenAI's gpt-4o-mini-tts for coach responses, driving a custom avatar that lip-syncs to live audio amplitude via the Web Audio API. Deployed across 3 interview tracks via a two-service architecture provisioned to Render through Infrastructure-as-Code (render.yaml) and the Render MCP server.",
+      tags: ["FastAPI", "LangChain", "RAG", "React", "TypeScript", "Chroma", "Web Audio API"],
+      link: "https://ai-interview-coach-1o2k.onrender.com/",
+      linkLabel: "Live Demo",
     },
   ],
 

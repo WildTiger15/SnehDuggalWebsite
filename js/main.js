@@ -44,11 +44,24 @@
 
   function renderAbout() {
     const initials = R.name.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase();
-    $("#avatarCore").textContent = initials;
+    if (R.photo) {
+      $("#avatarCore").innerHTML = `<img src="${esc(R.photo)}" alt="${esc(R.name)}" loading="lazy" onerror="this.remove()">`;
+    } else {
+      $("#avatarCore").textContent = initials;
+    }
+
+    const hobbiesHtml = (R.hobbies && R.hobbies.length) ? `
+      <span class="goal-tag">OUTSIDE OF WORK</span>
+      <div class="hobby-tags">
+        ${R.hobbies.map((h) => `<span><i>${esc(h.icon || "")}</i>${esc(h.label)}</span>`).join("")}
+      </div>
+    ` : "";
+
     $("#aboutCopy").innerHTML = `
       <p>${esc(R.about).replace(/\n\s*/g, " ")}</p>
       <span class="goal-tag">GOALS</span>
       <p>${esc(R.goals).replace(/\n\s*/g, " ")}</p>
+      ${hobbiesHtml}
     `;
 
     $("#eduWrap").innerHTML = R.education.map((e) => `

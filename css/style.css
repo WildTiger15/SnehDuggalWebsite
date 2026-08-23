@@ -229,11 +229,17 @@ main { position: relative; z-index: 1; }
   animation: spin 8s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
+@keyframes spin-reverse { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
 .avatar-core {
   width: 100%; height: 100%; border-radius: 50%;
   background: var(--bg-elevated);
   display: grid; place-items: center;
   font-family: var(--font-display); font-weight: 700; font-size: 2.6rem; color: var(--text);
+  overflow: hidden;
+  animation: spin-reverse 8s linear infinite; /* cancels parent ring's rotation so the photo stays upright */
+}
+.avatar-core img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;
 }
 .about-copy p { color: var(--text-dim); margin-bottom: 16px; font-size: 1.02rem; }
 .about-copy strong { color: var(--text); }
@@ -242,6 +248,14 @@ main { position: relative; z-index: 1; }
   color: var(--accent); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px;
   margin-bottom: 12px;
 }
+.hobby-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.hobby-tags span {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--text-dim);
+  background: var(--surface); border: 1px solid var(--border); padding: 7px 14px; border-radius: 999px;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.hobby-tags span:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--text); }
+.hobby-tags span i { font-style: normal; font-size: 1.05rem; }
 
 .edu-card {
   margin-top: 44px; padding: 26px 28px; border-radius: var(--radius);
