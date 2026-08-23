@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sneh Duggal — AI/ML Research &amp; Software Engineering</title>
+<meta name="description" content="Sneh Duggal — Computer Science student at the University of Victoria working on self-supervised learning, embedding retrieval, and applied computer vision." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="bg-fx" aria-hidden="true">
+  <canvas id="particles"></canvas>
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
+  <div class="grain"></div>
+</div>
+
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="nav-logo">SD<span class="dot">.</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#about" data-nav>About</a>
+    <a href="#experience" data-nav>Experience</a>
+    <a href="#projects" data-nav>Projects</a>
+    <a href="#publications" data-nav>Publications</a>
+    <a href="#skills" data-nav>Skills</a>
+    <a href="#contact" data-nav>Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button id="themeToggle" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <a id="resumeBtn" class="btn btn-ghost" href="assets/Sneh_Duggal_Resume.docx" download>Résumé</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow reveal">Hi, I'm</p>
+    <h1 class="hero-name reveal" id="heroName">Sneh Duggal</h1>
+    <div class="hero-role reveal">
+      <span>I build things in</span>
+      <span class="type-target" id="typeTarget"></span><span class="cursor-blink">|</span>
+    </div>
+    <div class="hero-cta reveal">
+      <a href="#projects" class="btn btn-primary">See my work</a>
+      <a href="#contact" class="btn btn-outline">Get in touch</a>
+    </div>
+    <div class="hero-meta reveal" id="heroMeta"></div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll down">
+      <span class="mouse"><span class="wheel"></span></span>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-head reveal">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-avatar reveal">
+        <div class="avatar-ring">
+          <div class="avatar-core" id="avatarCore"></div>
+        </div>
+      </div>
+      <div class="about-copy reveal" id="aboutCopy"></div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-visual" aria-hidden="true">
+        <svg viewBox="0 0 200 200" class="edu-illustration">
+          <defs>
+            <linearGradient id="eduSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="var(--accent-2)" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="95" r="86" fill="url(#eduSky)" />
+          <g class="edu-illustration-glow">
+            <ellipse cx="100" cy="168" rx="72" ry="8" fill="var(--accent)" opacity="0.12"/>
+          </g>
+          <!-- steps -->
+          <rect x="38" y="150" width="124" height="10" rx="2" fill="var(--surface-strong)" stroke="var(--border)"/>
+          <rect x="46" y="140" width="108" height="10" rx="2" fill="var(--surface-strong)" stroke="var(--border)"/>
+          <!-- building base -->
+          <rect x="52" y="90" width="96" height="50" fill="var(--bg-elevated)" stroke="var(--border)" stroke-width="1.5"/>
+          <!-- pediment / roof -->
+          <polygon points="46,90 100,52 154,90" fill="var(--surface-strong)" stroke="var(--border)" stroke-width="1.5" stroke-linejoin="round"/>
+          <!-- columns -->
+          <g class="edu-columns" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" opacity="0.85">
+            <line x1="64" y1="90" x2="64" y2="136"/>
+            <line x1="80" y1="90" x2="80" y2="136"/>
+            <line x1="96" y1="90" x2="96" y2="136"/>
+            <line x1="112" y1="90" x2="112" y2="136"/>
+            <line x1="128" y1="90" x2="128" y2="136"/>
+          </g>
+          <!-- door -->
+          <rect x="92" y="112" width="16" height="28" fill="var(--accent-2)" opacity="0.5"/>
+          <!-- crest dot -->
+          <circle cx="100" cy="70" r="4" fill="var(--accent-3)" class="edu-illustration-pulse"/>
+        </svg>
+      </div>
+      <div class="edu-content" id="eduWrap"></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="section-head reveal">
+      <span class="section-num">02</span>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="section-head reveal">
+      <span class="section-num">03</span>
+      <h2>Projects</h2>
+    </div>
+    <p class="section-note reveal">A few of the things I've built — more links dropping in soon.</p>
+    <div class="project-grid" id="projectGrid"></div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="section">
+    <div class="section-head reveal">
+      <span class="section-num">04</span>
+      <h2>Publications</h2>
+    </div>
+    <div class="pub-list" id="pubList"></div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="section-head reveal">
+      <span class="section-num">05</span>
+      <h2>Skills</h2>
+    </div>
+    <div class="skills-grid" id="skillsGrid"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <div class="section-head reveal">
+      <span class="section-num">06</span>
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-card reveal">
+      <h3 id="contactHeadline">Let's talk.</h3>
+      <p>Open to research collaborations, internships, and interesting problems. Reach out any time.</p>
+      <div class="contact-links" id="contactLinks"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Designed &amp; built by <span id="footerName">Sneh Duggal</span> · <span id="footerYear"></span></p>
+</footer>
+
+<button id="toTop" class="to-top" aria-label="Back to top">↑</button>
+
+<script src="js/resume-data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
