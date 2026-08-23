@@ -30,7 +30,7 @@ const RESUME = {
     github: "https://github.com/WildTiger15",
   },
   // Local file in /assets — swap in a new export any time and keep this path.
-  resumeFile: "assets/Sneh_Duggal_Resume.docx",
+  resumeFile: "assets/Sneh_Duggal_Resume.pdf",
 
   // ---- About -------------------------------------------------------------
   // Longer bio for the About section — keep this distinct from `tagline` above.
